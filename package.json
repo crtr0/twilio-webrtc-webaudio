@@ -1,0 +1,38 @@
+{
+  "name": "Twilio, WebRTC & Web Audio Demo",
+  "version": "0.0.1",
+  "description": "A presentation (in reveal.js) and some sample code for using Twilio & WebRTC.",
+  "homepage": "",
+  "subdomain": "",
+  "scripts": {
+    "test": "",
+    "start": "node ."
+  },
+  "author": {
+    "name": "Carter Rabasa",
+    "email": "carter@twilio.com",
+    "web": "http://twitter.com/carterrabasa"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crabasa/twilio-webrtc-webaudio.git"
+  },
+  "engines": {
+    "node": "~1.0.0"
+  },
+  "dependencies": {
+    "underscore": "~1.5.1",
+    "express": "~2.5.9",
+    "mustache": "~0.7.2",
+    "socket.io": "~0.9.13",
+    "twilio": "*",
+    "serve-static": "^1.2.3",
+    "node-static": "^0.7.3"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": ""
+    }
+  ]
+}
