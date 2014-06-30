@@ -16,9 +16,8 @@ http.createServer(function(request, response) {
   }
   else if (hash.path === '/voice') {
     var twiml = new twilio.TwimlResponse();
-    var room = Math.floor(Math.random()*8);
     twiml.dial(function(){
-      this.conference('conference'+room);
+      this.conference('conference');
     })
     response.writeHead(200, {'content-type': 'text/xml'});
     response.end(twiml.toString());
