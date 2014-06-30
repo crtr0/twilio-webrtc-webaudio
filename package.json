@@ -1,5 +1,5 @@
 {
-  "name": "Twilio, WebRTC & Web Audio Demo",
+  "name": "twilio-webrtc-webaudio",
   "version": "0.0.1",
   "description": "A presentation (in reveal.js) and some sample code for using Twilio & WebRTC.",
   "homepage": "",
