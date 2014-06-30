@@ -21,10 +21,9 @@ Deploy to the hosting provider or PaaS of choice. Remember to replicate the envi
 
 Use a tool like [Ngrok](http://ngrok.com) to tunnel localhost.
 
-Once this app is on the public internet, view the presentation by going to `http://domain:3000`.
+## View the presentation
 
-
-
+Once this app is on the public internet, view the presentation by going to `http://yourdomain`.
 
 ## Connect it to Twilio
 
@@ -43,5 +42,33 @@ Now visit `http://yourdomain/call`. Everyone who sent a text message to your Twi
 
 ## Recieve a phone call in the browser
 
-Go to [slide 12](http://localhost:3000/#/12) in the presentation. *You must be using Chrome*. Now open up the Chrome Dev Tools and go to the JS console. enter
+*REQUIRMENT: You must be using Chrome*
+
+Go to slide 12 in the presentation. Now open up the Chrome Dev Tools and go to the JS console. Enter:
+
+```
+$.ajax('/token').done(function(token) { Twilio.Device.setup(token); });
+
+Twilio.Device.incoming(function(conn) { conn.accept(); window.mediaStream = conn.mediaStream; $('log').html('call coming in!'); });
+```
+Now use someone's phone to call your Twilio number. You should see a Chrome dialog appear asking for permission to use your microphone. Click "accept" and the call will get connected to your browser!
+
+## See the volume of the call using the Web Audio API
+
+Now go to the next slide (#13) and enter the following code in the JS console:
+
+```
+visualizeMediaStream(mediaStream.stream);
+```
+
+Speak into your computer. You should see the bar rise and fall on the screen based on the volume coming from your microphone on the live call. 
+
+## Meta 
+
+* No warranty expressed or implied.  Software is as is.
+* [MIT License](http://www.opensource.org/licenses/mit-license.html)
+* Brought to you by [Twilio](http://www.twilio.com) Seattle
+
+
+
 
